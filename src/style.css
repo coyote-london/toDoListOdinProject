@@ -4,8 +4,9 @@ body {
 
 .questName,
 .nextTask {
-    margin: 1vw;
+    margin: 1.2vw;
 }
+
 
 #questContainer {
     background-color: rgb(48, 50, 61);
@@ -27,6 +28,7 @@ body {
     border: .7vw solid rgb(207, 212, 238);
     border-radius: 2vw;
     color: rgb(207, 212, 238);
+    padding: 2vw;
 }
 
 
