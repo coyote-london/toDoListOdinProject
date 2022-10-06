@@ -1,3 +1,48 @@
-#test {
-    color: red;
+body {
+    background-color: rgb(48, 50, 61);
+}
+
+.questName,
+.nextTask {
+    margin: 1vw;
+}
+
+#questContainer {
+    background-color: rgb(48, 50, 61);
+    border: .7vw solid rgb(207, 212, 238);
+    border-radius: 2vw;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    min-width: 70vw;
+}
+
+#homePage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(48, 50, 61);
+    border: .7vw solid rgb(207, 212, 238);
+    border-radius: 2vw;
+    color: rgb(207, 212, 238);
+}
+
+
+
+.quest {
+    background-color: rgb(48, 50, 61);
+    border: .7vw solid rgb(207, 212, 238);
+    border-radius: 2vw;
+    margin: 2vw;
+    padding: 1vw;
+    min-width: 65vw;
+}
+
+button {
+    background-color: rgb(207, 212, 238);
+    border: .5vw solid rgb(111, 114, 128);
+    border-radius: 1.5vw;
+    margin: 1vw;
 }
