@@ -19,7 +19,7 @@ const homePage = () => {
         
     
     const questArray = [];
-    let currentQuest = -1;   
+    let currentQuestIndex = -1;   
 
     const buttonContainer = document.createElement('div');
         buttonContainer.className = 'buttonContainer';
@@ -28,8 +28,8 @@ const homePage = () => {
             previousQuestButton.innerHTML = 'Previous Quest'
             previousQuestButton.onclick = e => {
                 e.stopPropagation();
-                if (currentQuest > 0) currentQuest = currentQuest - 1;
-                renderQuest(questArray[currentQuest]);
+                if (currentQuestIndex > 0) currentQuestIndex = currentQuestIndex - 1;
+                renderQuest(questArray[currentQuestIndex]);
             }
         const addQuestButton = document.createElement('button');
             addQuestButton.id = 'addQuestButton';
@@ -39,19 +39,29 @@ const homePage = () => {
                 const questObject = createQuestPage(window.prompt('What do you want to accomplish?'));
                 questArray.push(questObject);
                 console.log(questArray);
-                currentQuest = questArray.length - 1;
-                renderQuest(questArray[currentQuest]);
+                currentQuestIndex = questArray.length - 1;
+                renderQuest(questArray[currentQuestIndex]);
+            }
+        const deleteQuestButton = document.createElement('button') 
+            deleteQuestButton.className = 'deleteQuest';
+            deleteQuestButton.innerHTML = 'Delete Quest';
+            deleteQuestButton.onclick = e => {
+                e.stopPropagation();
+                questArray.splice(currentQuestIndex, 1);
+                if (currentQuestIndex == questArray.length) currentQuestIndex = questArray.length - 1; 
+                renderQuest(questArray[currentQuestIndex]);
             }
         const nextQuestButton = document.createElement('button');
             nextQuestButton.className = 'nextQuestButton';
             nextQuestButton.innerHTML = 'Next Quest'
             nextQuestButton.onclick = e => {
                 e.stopPropagation();
-                if (currentQuest < questArray.length - 1) currentQuest = currentQuest + 1;
-                renderQuest(questArray[currentQuest]);
+                if (currentQuestIndex < questArray.length - 1) currentQuestIndex = currentQuestIndex + 1;
+                renderQuest(questArray[currentQuestIndex]);
             }
     buttonContainer.appendChild(previousQuestButton);
-    buttonContainer.appendChild(addQuestButton)
+    buttonContainer.appendChild(addQuestButton);
+    buttonContainer.appendChild(deleteQuestButton);
     buttonContainer.appendChild(nextQuestButton);
 
 
@@ -62,8 +72,8 @@ const homePage = () => {
         homePage.appendChild(buttonContainer);
     }
     function renderQuest(renderedQuest) {
-        if (questArray.length < 1) return;
         questContainer.innerHTML = '';
+        if (questArray.length < 1) return;
         questContainer.appendChild(renderedQuest.quest);
         renderPage();
     }
