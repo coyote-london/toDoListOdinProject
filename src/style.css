@@ -17,6 +17,7 @@ body {
     align-items: flex-start;
     justify-content: flex-start;
     min-width: 70vw;
+    min-height: 70vh;
 }
 
 #homePage {
@@ -29,6 +30,7 @@ body {
     border-radius: 2vw;
     color: rgb(207, 212, 238);
     padding: 2vw;
+    min-height: 90vh;
 }
 
 
