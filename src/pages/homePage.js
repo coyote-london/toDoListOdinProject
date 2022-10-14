@@ -1,6 +1,5 @@
 import { createQuestPage } from "./questPage";
 
-
 const homePage = () => {    
     const content = document.getElementById('content');
         content.innerHTML = '';

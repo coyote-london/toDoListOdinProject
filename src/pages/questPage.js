@@ -1,5 +1,5 @@
 import { homePage } from "./homePage";
-
+import { dropDownMenuButton } from "./dropDownMenu";
 const createQuestPage = (questName) => {
     const quest = document.createElement('div');
         quest.className = 'quest';
@@ -38,10 +38,17 @@ const createQuestPage = (questName) => {
             taskHeading.className = 'taskHeading';
             taskHeading.innerHTML = taskName;
             task.appendChild(taskHeading);
-        const editButton = document.createElement('button');
-            editButton.className = 'editButton';
-            editButton.innerHTML = 'Edit';
-            task.appendChild(editButton);
+        const buttonArray = [];
+        const editTextButton = document.createElement('button');
+            editTextButton.className = 'editTextButton';
+            editTextButton.innerHTML = 'Edit'
+        buttonArray.push(editTextButton);
+        const completeTaskButton = document.createElement('button');
+            completeTaskButton.className = 'completeTaskButton';
+            completeTaskButton.innerHTML = 'Completed!';
+        buttonArray.push(completeTaskButton);
+        const menuButton = dropDownMenuButton('menu', 'Close', buttonArray);
+            task.appendChild(menuButton.dropMenuContainer);
         return { task };
     }
 

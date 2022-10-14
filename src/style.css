@@ -80,3 +80,10 @@ button {
     border-radius: 1.5vw;
     margin: 1vw;
 }
+
+.dropMenuOpen {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(111, 114, 128);
+    align-self: flex-end;
+}
