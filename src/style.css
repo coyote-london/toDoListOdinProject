@@ -20,6 +20,35 @@ body {
     min-height: 70vh;
 }
 
+.quest {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.questHeading {
+    border-bottom: .7vh solid rgb(207, 212, 238);
+    min-width: 68vw;
+    text-align: center;
+    font-size: 6vw;
+    margin-top: 2vh;
+    margin-bottom: 1vh;
+}
+
+.taskContainer {
+    margin-top: 1vh;
+}
+
+.task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: .2vh solid rgb(207, 212, 238);
+    min-width: 68vw;
+    margin-top: 1vh;
+}
+
 #homePage {
     display: flex;
     flex-direction: column;
