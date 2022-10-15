@@ -30,6 +30,7 @@ const createQuestPage = (questName) => {
     quest.appendChild(buttonContainer);
 
     const taskArray = [];
+    const completedTaskArray = [];
     
     const newTaskButton = document.createElement('button');
         newTaskButton.className = 'newTaskButton';

@@ -1,4 +1,5 @@
 import { dropDownMenuButton } from "./dropDownMenu";
+import { editTextButton } from "./editTextButton";
 
 const createTask = (taskName) => {
     const task = document.createElement('div');
@@ -8,10 +9,8 @@ const createTask = (taskName) => {
         taskHeading.innerHTML = taskName;
         task.appendChild(taskHeading);
     const buttonArray = [];
-    const editTextButton = document.createElement('button');
-        editTextButton.className = 'editTextButton';
-        editTextButton.innerHTML = 'Edit'
-    buttonArray.push(editTextButton);
+    const editTaskObject = editTextButton(taskHeading);
+    buttonArray.push(editTaskObject.button);
     const completeTaskButton = document.createElement('button');
         completeTaskButton.className = 'completeTaskButton';
         completeTaskButton.innerHTML = 'Completed!';
