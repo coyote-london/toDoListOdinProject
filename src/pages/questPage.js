@@ -37,7 +37,7 @@ const createQuestPage = (questName) => {
         newTaskButton.innerHTML = 'New Task';
         newTaskButton.onclick = e => {
             e.stopPropagation();
-            const taskObject = createTask(window.prompt('What task needs to be done?'));
+            const taskObject = createTask(window.prompt('What task needs to be done?'), taskArray, completedTaskArray, taskContainer);
             taskArray.push(taskObject);
             taskContainer.appendChild(taskObject.task);
         }
