@@ -8,7 +8,7 @@ body {
 }
 
 
-#questContainer {
+#objectCarousel {
     background-color: rgb(48, 50, 61);
     border: .7vw solid rgb(207, 212, 238);
     border-radius: 2vw;
@@ -83,7 +83,8 @@ button {
 
 .dropMenuOpen {
     display: flex;
-    flex-direction: column;
-    background-color: rgb(111, 114, 128);
-    align-self: flex-end;
+    background-color: rgb(48, 50, 61);
+    align-self: center;
+    border: .3vw solid rgb(207, 212, 238);
+    border-radius: 2vw;
 }

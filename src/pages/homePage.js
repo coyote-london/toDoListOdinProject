@@ -14,7 +14,7 @@ const homePage = () => {
     
 
     const questContainer = document.createElement('div');
-        questContainer.id = 'questContainer';
+        questContainer.id = 'objectCarousel';
         
     
     const questArray = [];

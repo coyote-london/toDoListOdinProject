@@ -1,5 +1,17 @@
-import { homePage } from "./homePage";
-import { dropDownMenuButton } from "./dropDownMenu";
+import { createTask } from "./createTask";
+
+//div created
+//All quest elements are created and added to div
+//Quest container made and added to div
+//QuestName becomes the heading's html
+//Quest Array created
+//When add quest button is pressed quest object is created 
+//Add quest object to array
+//Iterate through array and add objects to questContainter
+//previous and next buttons will change the index of what object from array is attached to questContainer
+//Delete button removes object from array
+
+
 const createQuestPage = (questName) => {
     const quest = document.createElement('div');
         quest.className = 'quest';
@@ -30,27 +42,6 @@ const createQuestPage = (questName) => {
         }
     
     buttonContainer.appendChild(newTaskButton);
-
-    const createTask = (taskName) => {
-        const task = document.createElement('div');
-            task.className = 'task';
-        const taskHeading =document.createElement('h3');
-            taskHeading.className = 'taskHeading';
-            taskHeading.innerHTML = taskName;
-            task.appendChild(taskHeading);
-        const buttonArray = [];
-        const editTextButton = document.createElement('button');
-            editTextButton.className = 'editTextButton';
-            editTextButton.innerHTML = 'Edit'
-        buttonArray.push(editTextButton);
-        const completeTaskButton = document.createElement('button');
-            completeTaskButton.className = 'completeTaskButton';
-            completeTaskButton.innerHTML = 'Completed!';
-        buttonArray.push(completeTaskButton);
-        const menuButton = dropDownMenuButton('menu', 'Close', buttonArray);
-            task.appendChild(menuButton.dropMenuContainer);
-        return { task };
-    }
 
     return { quest };
 }
