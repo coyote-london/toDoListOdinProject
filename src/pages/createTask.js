@@ -1,6 +1,7 @@
 import { dropDownMenuButton } from "./dropDownMenu";
 import { editTextButton } from "./editTextButton";
 import { deleteButton } from "./deleteFromArrayButton";
+import { changeArrayButton } from "./changeArrayButton";
 
 const createTask = (taskName, taskArray, completedTaskArray, parentContainer) => {
     const task = document.createElement('div');
@@ -13,15 +14,13 @@ const createTask = (taskName, taskArray, completedTaskArray, parentContainer) =>
     const buttonArray = [];
    
     const editTaskObject = editTextButton(taskHeading);
-    buttonArray.push(editTaskObject.button);
-   
     const deleteTaskObject = deleteButton(task, parentContainer, taskArray)
-    buttonArray.push(deleteTaskObject.button)
+    const completeTaskObject = changeArrayButton(task, taskArray, completedTaskArray, parentContainer, 'Complete')
     
-    const completeTaskButton = document.createElement('button');
-        completeTaskButton.className = 'completeTaskButton';
-        completeTaskButton.innerHTML = 'Completed!';
-    buttonArray.push(completeTaskButton);
+    buttonArray.push(editTaskObject.button);
+    buttonArray.push(deleteTaskObject.button)
+    buttonArray.push(completeTaskObject.button);
+    
     const menuButton = dropDownMenuButton('menu', 'Close', buttonArray, false);
         task.appendChild(menuButton.dropMenuContainer);
     return { task };
