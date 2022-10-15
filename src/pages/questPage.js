@@ -1,5 +1,6 @@
 import { createTask } from "./createTask";
 
+
 //div created
 //All quest elements are created and added to div
 //Quest container made and added to div
@@ -13,6 +14,9 @@ import { createTask } from "./createTask";
 
 
 const createQuestPage = (questName) => {
+    const taskArray = [];
+    const completedTaskArray = [];
+
     const quest = document.createElement('div');
         quest.className = 'quest';
     
@@ -29,8 +33,6 @@ const createQuestPage = (questName) => {
         buttonContainer.className = 'buttonContainer';
     quest.appendChild(buttonContainer);
 
-    const taskArray = [];
-    const completedTaskArray = [];
     
     const newTaskButton = document.createElement('button');
         newTaskButton.className = 'newTaskButton';

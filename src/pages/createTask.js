@@ -15,7 +15,7 @@ const createTask = (taskName, taskArray, completedTaskArray, parentContainer) =>
    
     const editTaskObject = editTextButton(taskHeading);
     const deleteTaskObject = deleteButton(task, parentContainer, taskArray)
-    const completeTaskObject = changeArrayButton(task, taskArray, completedTaskArray, parentContainer, 'Complete')
+    const completeTaskObject = changeArrayButton(task, taskArray, completedTaskArray, parentContainer, 'Complete', true, ' tasks completed')
     
     buttonArray.push(editTaskObject.button);
     buttonArray.push(deleteTaskObject.button)
