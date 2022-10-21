@@ -13,7 +13,7 @@ const createTask = (taskName, taskArray, completedTaskArray, parentContainer) =>
    
     const buttonArray = [];
    
-    const editTaskObject = editTextButton(taskHeading);
+    const editTaskObject = editTextButton(taskHeading, 'What is the new task?');
     const deleteTaskObject = deleteButton(task, parentContainer, taskArray)
     const completeTaskObject = changeArrayButton(task, taskArray, completedTaskArray, parentContainer, 'Complete', true, ' tasks completed')
     
@@ -21,7 +21,7 @@ const createTask = (taskName, taskArray, completedTaskArray, parentContainer) =>
     buttonArray.push(deleteTaskObject.button)
     buttonArray.push(completeTaskObject.button);
     
-    const menuButton = dropDownMenuButton('menu', 'Close', buttonArray, false);
+    const menuButton = dropDownMenuButton(buttonArray, false);
         task.appendChild(menuButton.dropMenuContainer);
     return { task };
 }

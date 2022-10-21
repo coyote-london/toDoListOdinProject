@@ -1,3 +1,4 @@
+import { deleteObject } from "./deleteFromArrayButton";
 
 const changeArrayButton = (object, startArray, endArray, parentContainer, buttonText, counter = false, objectsCountedText = '') => {
     const button = document.createElement('button');
@@ -5,12 +6,16 @@ const changeArrayButton = (object, startArray, endArray, parentContainer, button
         button.innerHTML = buttonText;
         button.onclick = e => {
             e.stopPropagation();
-            endArray.push(startArray.indexOf(object));
-            parentContainer.removeChild(object);
-            startArray.splice(startArray.indexOf(object));
+            deleteObject(object, parentContainer, startArray);
+            changeArray(object, startArray, endArray);
             if (counter == true) window.alert(endArray.length + objectsCountedText);
         }
     return { button };
 }
 
-export { changeArrayButton };
+function changeArray(object, startArray, endArray) {
+    endArray.push(startArray.indexOf(object));
+    startArray.splice(startArray.indexOf(object));
+}
+
+export { changeArrayButton, changeArray };

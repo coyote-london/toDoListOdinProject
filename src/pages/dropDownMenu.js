@@ -10,7 +10,7 @@
 //if button is clicked closeMenu() is run
 //div html is wiped and menu button is reattached and changed back to its closed state
 
-const dropDownMenuButton = (openButtonText, closeButtonText, contentArray, menuButtonFirst = true) => {
+const dropDownMenuButton = (contentArray, menuButtonFirst = true, openButtonText = 'open', closeButtonText = 'close') => {
     const dropMenuContainer = document.createElement('div');
         dropMenuContainer.className = 'dropMenuClosed';
     const menuButton = document.createElement('button');

@@ -1,12 +1,16 @@
-const editTextButton = (targetText) => {
+const editTextButton = (targetText, textPrompt) => {
     const button = document.createElement('button');
         button.className = 'editTextButton';
         button.innerHTML = 'Edit'
         button.onclick = e => {
             e.stopPropagation();
-            targetText.innerHTML = window.prompt('What is the new task?');
+            editText(targetText, textPrompt);
         }
     return { button };
+}
+
+function editText(targetText, textPrompt) {
+    targetText.innerHTML = window.prompt(textPrompt)
 }
 
 export { editTextButton };
